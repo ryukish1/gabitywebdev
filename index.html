@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Website</title>
+    <style>
+        body {
+            background-color: #f8d7e8; /* Semi-light pink background */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2.5rem; /* Large font size */
+            color: #d1286a; /* Dark pink color */
+            font-family: 'Georgia', serif; /* Nice readable font */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 12px; /* Rounded edges for the image */
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px; /* Space between buttons */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff5f91; /* Pink button color */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #e04b78; /* Slightly darker pink on hover */
+        }
+    </style>
+    <script>
+        function redirectToYes() {
+            window.location.href = "yes.html"; // Replace with your "Yes" HTML file
+        }
+
+        function redirectToNo() {
+            window.location.href = "no.html"; // Replace with your "No" HTML file
+        }
+    </script>
+</head>
+<body>
+    <h1>Would you be my Valentine again?<br>My future wife</h1>
+    <img src="Assests/Pusa.jpg" alt="Valentine Image">
+    <div class="buttons">
+        <button onclick="redirectToYes()">Yes</button>
+        <button onclick="redirectToNo()">No</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Website</title>
+    <style>
+        body {
+            background-color: #f8d7e8; /* Semi-light pink background */
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px; /* Adds spacing between elements */
+            padding: 20px; /* Adds space around the content */
+            margin: 0;
+        }
+        h1 {
+            font-size: 2.5rem; /* Large font size */
+            color: #d1286a; /* Dark pink color */
+            font-family: 'Georgia', serif; /* Nice readable font */
+            text-align: center;
+            margin-bottom: 20px; /* Space between text and image */
+        }
+        img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 12px; /* Optional rounded edges for the image */
+            margin-bottom: 30px;
+        }
+        .cards-container {
+            display: flex;
+            gap: 15px;
+        }
+        .card {
+            width: 100px; /* Expanded width */
+            height: 120px; /* Expanded height */
+            background-color: #ff5f91; /* Card background color */
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            overflow: hidden; /* Ensures content fits within the card */
+        }
+        .card:hover {
+            transform: scale(1.1); /* Slightly enlarge on hover */
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+        }
+        .card img {
+            width: 100%; /* Image fits the width of the card */
+            height: 100%; /* Image fits the height of the card */
+            object-fit: cover; /* Keeps the aspect ratio */
+            border-radius: 8px; /* Matches the card's rounded edges */
+        }
+        .card-text {
+            position: absolute;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Optional text shadow for better visibility */
+        }
+        .card:hover .card-text {
+            opacity: 1; /* Text appears on hover */
+        }
+
+        /* Modal styling */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+        }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .modal-content h2 {
+            font-size: 1.8rem;
+            color: #d1286a;
+            margin-bottom: 10px;
+        }
+        .modal-content p {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .modal-content button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #ff5f91;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .modal-content button:hover {
+            background-color: #d1286a;
+        }
+
+        .youtube-container {
+            width: 90%; /* Responsive width */
+            max-width: 600px; /* Limit max width for larger screens */
+            margin: 20px auto; /* Center the container with margin */
+            background-color: #ffeaf3; /* Light pink background to match theme */
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+            padding: 15px; /* Padding around the iframe */
+            display: flex;
+            flex-direction: column; /* Stack text and iframe vertically */
+            justify-content: center;
+            align-items: center;
+            text-align: center; /* Center the text */
+        }
+
+        .youtube-container iframe {
+            border-radius: 8px; /* Slightly rounded edges for iframe */
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15); /* Shadow for iframe */
+        }
+
+        .youtube-text {
+            font-size: 1.2rem; /* Medium-sized text */
+            font-weight: bold; /* Make it stand out */
+            color: #d1286a; /* Dark pink color */
+            margin-bottom: 10px; /* Space between text and iframe */
+            font-family: 'Georgia', serif; /* A romantic font */
+        }
+    </style>
+</head>
+<body>
+    <h1>Yieeeeeeeeeeeeeeeeeeeeeeeeeeee</h1>
+    <img src="\Assests\PusaYes.jpg" alt="Valentine Image">
+
+    <div class="cards-container">
+        <!-- Cards with images -->
+        <div class="card" onclick="showModal('Birthday q to ih', 'Assests/ModalPic.jpg', 'Thank you sa lahat ng effort mo, sarap mo pa')">
+            <img src="Assets/I.jpg" alt="I">
+            <span class="card-text">I</span>
+        </div>
+        <div class="card" onclick="showModal('Super Cutie ', 'Assests/ModalPic2.jpg', 'Napakaganda, lagi kong hinahanap, napakasarap magmahal, masikip, sobrang ganda pa ay jusko patay na ')">
+            <img src="Assets/L.jpg" alt="L">
+            <span class="card-text">L</span>
+        </div>
+        <div class="card" onclick="showModal('Kiss kiss kiss', 'Assests/ModalPic3.jpg', 'Eto yung masama pakiramdam q pero gusto pa rin kita makatabi, gusto ko lagi kita katabi ket tulog lang ako. nakahawak sa dodo mo juk hehe')">
+            <img src="Assets/Y.jpg" alt="Y">
+            <span class="card-text">Y</span>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <img id="modal-image" src="\Assests\PusaYes.jpg" alt="Modal Image">
+            <h2 id="modal-message"></h2>
+            <p id="modal-description"></p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to show the modal with the respective message and image
+        function showModal(letter, imageSrc, description) {
+            const modal = document.getElementById('modal');
+            const message = document.getElementById('modal-message');
+            const image = document.getElementById('modal-image');
+            const desc = document.getElementById('modal-description');
+            
+            message.textContent = ` ${letter}!`;
+            image.src = imageSrc;
+            desc.textContent = description;
+            
+            modal.style.display = 'flex';
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
+    </script>
+
+    <div class="youtube-container">
+        <p class="youtube-text">I dedicate this song to you</p>
+        <iframe 
+            width="100%" 
+            height="315" 
+            src="https://www.youtube.com/embed/K-1Y4zml2hw?start=62" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+</body>
+</html>

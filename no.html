@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Website</title>
+    <style>
+        body {
+            background-color: #f8d7e8; /* Semi-light pink background */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2.5rem; /* Large font size */
+            color: #d1286a; /* Dark pink color */
+            font-family: 'Georgia', serif; /* Nice readable font */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 12px; /* Rounded edges for the image */
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px; /* Space between buttons */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff5f91; /* Pink button color */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease; /* Smooth transitions for size and hover */
+        }
+        button:hover {
+            background-color: #e04b78; /* Slightly darker pink on hover */
+        }
+    </style>
+    <script>
+        function redirectToYes() {
+            const button = document.querySelector("button");
+            const currentSize = parseFloat(window.getComputedStyle(button).fontSize);
+            const maxSize = 40; // Set a limit for the font size (e.g., 40px)
+            
+            if (currentSize < maxSize) {
+                button.style.fontSize = (currentSize * 1.1) + "px"; // Increase font size by 10%
+                button.style.padding = `${parseFloat(button.style.padding || 10) * 1.1}px`; // Adjust padding
+            } else {
+                // Redirect to yes.html when the limit is reached
+                window.location.href = "yes.html";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Yes yannn hehe walang no dito ehehhehe</h1>
+    <img src="\Assests\CryingCat.gif" alt="Valentine Image">
+    <div class="buttons">
+        <button onclick="redirectToYes()">Yes</button>
+    </div>
+</body>
+</html>
